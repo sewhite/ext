@@ -1,3 +1,2 @@
-Extension template for Platform.Bible. Powered by webpack.
-
-This is a webpack project template pre-configured to build a Platform.Bible extension. It contains the bare minimum of what an extension needs.
+Shows the user roles and permissions recorded for a Paratext project (read from that
+project's `ProjectUserAccess.xml`): each user's role, book access, and granted permissions.

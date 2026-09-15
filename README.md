@@ -5,6 +5,28 @@
 Shows user roles and permissions for a Paratext project, read from that project's
 `ProjectUserAccess.xml`. Built from paranext-extension-template.
 
+Open it from a project's **Project** menu (_Project User Roles..._) or pick a project from the
+dropdown. Everyone can view the project's users, roles, book access and permissions. If the
+Paratext user registered on this computer is the project's **Administrator**, the table becomes
+editable:
+
+- change any user's role, "All books" switch, individual books, and permissions;
+- **Remove** a user (the project owner and you yourself cannot be removed - another Administrator
+  has to remove you);
+- follow the **Paratext Registry** link to the project's Members page
+  (`https://registry.paratext.org/projects/<ParatextRegistryId>#members`, using the registration
+  code from the project's `Settings.xml`) to add new users - users have to be added there, not in
+  the local file, so that Send/Receive gives them access; they show up here after the next
+  Send/Receive;
+- nothing is written to the project until you click **Save**; **Cancel** throws the draft away.
+  Save writes all of your changes to `ProjectUserAccess.xml` in one go, and refuses (writing
+  nothing) any change set that would leave the project with no Administrator or demote you.
+
+The disk I/O lives in `assets/project-scanner.js`, which runs as a separate Node process via the
+`createProcess` elevated privilege; `src/main.ts` exposes it as `projectUserRoles.*` commands
+(documented in `src/types/project-user-roles.d.ts`), and `src/project-user-roles.web-view.tsx` is
+the UI.
+
 <!-- <!-- Opening comment tag for Template Info Section. Ignore this for now. More info in [Hide Template Info](#hide-template-info). -->
 
 ## Template Info

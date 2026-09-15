@@ -10,8 +10,8 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
-release
+# dist and release are deliberately committed: dist/ is the built extension, and
+# release/*.zip can be dropped straight into .paratext-10-studio/installed-extensions
 dist-ssr
 *.local
 

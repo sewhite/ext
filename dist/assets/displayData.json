@@ -1,0 +1,12 @@
+{
+  "icon": "",
+  "moreInfoUrl": "",
+  "supportUrl": "",
+  "localizedDisplayInfo": {
+    "en": {
+      "displayName": "Project User Roles",
+      "shortSummary": "Shows user roles and permissions for a Paratext project",
+      "description": "assets/descriptions/description-en.md"
+    }
+  }
+}
